@@ -1,5 +1,5 @@
-describe('My First Test', () => {
-    it('Does not do much!', () => {
+describe('Greekart', () => {
+    it('End to End', () => {
         cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
         cy.get('.search-keyword').type('CA')
         // Selenium get hit url in browser, cypress get acts like find element of selenium
@@ -29,6 +29,8 @@ describe('My First Test', () => {
         cy.get('.cart-icon > img').click()
         cy.contains('PROCEED TO CHECKOUT').click()
         cy.get(':nth-child(14)').click()
+
+        // cy.get('select').select()
 
 
 
