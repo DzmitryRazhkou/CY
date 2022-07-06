@@ -1,0 +1,17 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "author": "Dzmitry Razhkou",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.3.0"
+  }
+
+}
