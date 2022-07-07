@@ -12,12 +12,12 @@ describe('TestFramework', function(){
         const homePage = new HomePage()
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
 
-        homePage.getEditBox.type(this.data.name)
-        homePage.getGender.select(this.data.gender)
-        homePage.getTwoWayDate.should('have.value', this.data.name)
-        homePage.getEditBox.should('have.attr', 'minlength', '2')
-        homePage.getEntrepreneaur.should('be.disabled')
-        homePage.getShopTab.click()
+        homePage.getEditBox().type(this.data.name)
+        homePage.getGender().select(this.data.gender)
+        homePage.getTwoWayDate().should('have.value', this.data.name)
+        homePage.getTwoWayDate().should('have.attr', 'minlength', '2')
+        homePage.getEntrepreneaur().should('be.disabled')
+        homePage.getShopTab().click()
 
         this.data.productName.forEach(function(ele){
             cy.get('h4.card-title').each(($el, index, $list) => {
