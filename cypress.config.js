@@ -1,10 +1,13 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'bohijf',
+
   chromeWebSecurity: false,
   defaultCommandTimeout: 8000,
   pageLoadTimeout: 4000,
   reporter: 'mochawesome',
+  
   env: {
     url: 'https://rahulshettyacademy.com/angularpractice/'
   },
@@ -18,9 +21,6 @@ module.exports = defineConfig({
     },
 
     specPattern: 'cypress/integration/*js'
-
-    
-
 
   },
 });
