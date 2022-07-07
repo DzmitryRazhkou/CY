@@ -23,7 +23,7 @@ describe('TestFramework', function(){
 
         // Iterate all products: we will move and create a custom command (support/commands.js)
 
-        cy.selectProduct('iphone')
+        cy.selectProduct('Blackberry')
 
 
 
