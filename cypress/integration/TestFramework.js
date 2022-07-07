@@ -18,14 +18,26 @@ describe('TestFramework', function(){
         // Assert radio button:
         cy.get('#inlineRadio3').should('be.disabled')
 
+        cy.pause()
+
         // Proceed to home button:
         cy.get(':nth-child(2) > .nav-link').click()
 
         // Iterate all products: we will move and create a custom command (support/commands.js)
 
-        cy.selectProduct('Blackberry')
+        // this.data.productName.forEach(function(element){
+                    // cy.selectProduct('iphone X')
+        // })
 
 
+        this.data.productName.forEach(function(ele){
+            cy.get('h4.card-title').each(($el, index, $list) => {
+                if($el.text().includes(ele))
+                {
+                    cy.get('button.btn.btn-info').eq(index).click()
+                }
+            })
+        })
 
     })
 })
