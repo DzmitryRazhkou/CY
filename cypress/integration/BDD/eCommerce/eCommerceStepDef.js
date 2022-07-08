@@ -1,6 +1,6 @@
 import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
-import HomePage from "../../pageObjects/HomePage";
-import ProductPage from "../../pageObjects/ProductPage";
+import HomePage from '../../pageObjects/ProductPage'
+import ProductPage from '../../pageObjects/ProductPage'
 
 // Create new objects of pages:
 const homePage = new HomePage()
@@ -29,7 +29,6 @@ When('I add items to cart', function()
 And('Validate the total prices', function()
 {
     var sum = 0
-
         cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
             const amount = $el.text()
             var res = amount.split(" ")
@@ -56,9 +55,6 @@ Then('Select the country submit and verify', function()
     cy.get('.suggestions > ul > li > a').click()
     cy.get('input#checkbox2').check({force: true})
     cy.get('.ng-untouched > .btn').click()
-    // cy.get('.alert').should('have.text', 'Success! Thank you! Your order will be delivered in next few weeks :-).')
-
-    // If you need to validate partial text!!!
 
     cy.get('.alert').then(function(ele){
         const actText = ele.text()
