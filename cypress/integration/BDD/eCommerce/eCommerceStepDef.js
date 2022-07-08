@@ -6,7 +6,7 @@ import ProductPage from '../../pageObjects/ProductPage'
 const homePage = new HomePage()
 const productPage = new ProductPage()
 
-Given('I open ECommerce Page', function()
+Given('I open ECommerce Page', ()=>
 {
     cy.visit('https://rahulshettyacademy.com/angularpractice/')
 })
