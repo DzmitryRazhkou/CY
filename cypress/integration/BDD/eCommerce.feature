@@ -1,6 +1,6 @@
-Feature: End to end ECommerce validation
+Feature: End to end E-Commerce validation
 
-Scenario: ECommerce products delivery
+Scenario: E-Commerce products delivery
 
 Given I open ECommerce Page
 When I add items to cart
