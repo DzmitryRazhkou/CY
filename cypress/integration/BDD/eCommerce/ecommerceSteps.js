@@ -6,6 +6,8 @@ import ProductPage from '../../pageObjects/ProductPage'
 const homePage = new HomePage()
 const productPage = new ProductPage()
 
+// E-Commerce products delivery
+
 Given('I open ECommerce Page', ()=>
 {
     cy.visit('https://rahulshettyacademy.com/angularpractice/')
@@ -60,4 +62,24 @@ Then('Select the country submit and verify', function()
         const actText = ele.text()
         expect(actText.includes('Success')).to.be.true
     })
+})
+
+// Filling the form to shop
+
+When('I fill the form details', function()
+{
+    homePage.getEditBox().type(this.data.name)
+    homePage.getGender().select(this.data.gender)
+})
+
+Then('Validate the forms behavior', function()
+{
+    homePage.getTwoWayDate().should('have.value', this.data.name)
+    homePage.getTwoWayDate().should('have.attr', 'minlength', '2')
+    homePage.getEntrepreneaur().should('be.disabled')
+})
+
+And('Select the shop page', function()
+{
+    homePage.getShopTab().click()
 })
