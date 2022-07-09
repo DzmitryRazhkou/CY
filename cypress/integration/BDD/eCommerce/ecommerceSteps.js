@@ -66,15 +66,16 @@ Then('Select the country submit and verify', function()
 
 // Filling the form to shop
 
-When('I fill the form details', function()
+When('I fill the form details', function(dataTable)
 {
-    homePage.getEditBox().type(this.data.name)
-    homePage.getGender().select(this.data.gender)
+    name = dataTable.rawTable[1][0]
+    homePage.getEditBox().type(dataTable.rawTable[1][0])
+    homePage.getGender().select(dataTable.rawTable[1][1])
 })
 
 Then('Validate the forms behavior', function()
 {
-    homePage.getTwoWayDate().should('have.value', this.data.name)
+    homePage.getTwoWayDate().should('have.value', name)
     homePage.getTwoWayDate().should('have.attr', 'minlength', '2')
     homePage.getEntrepreneaur().should('be.disabled')
 })
