@@ -1,5 +1,5 @@
 import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
-import HomePage from '../../pageObjects/ProductPage'
+import HomePage from '../../pageObjects/HomePage'
 import ProductPage from '../../pageObjects/ProductPage'
 
 // Create new objects of pages:
