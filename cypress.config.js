@@ -24,7 +24,7 @@ module.exports = defineConfig({
 
     },
 
-    specPattern: 'cypress/integration/BDD/*.feature'
+    specPattern: 'cypress/integration/*.js'
 
   },
 });
