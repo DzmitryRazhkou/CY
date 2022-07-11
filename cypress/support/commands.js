@@ -22,9 +22,26 @@ Cypress.Commands.add("selectProduct", (productName) => {
     })
 })
 
-Cypress.Commands.add('LoginAPI', () => {
-    cy.request('POST', 'https://rahulshettyacademy.com/api/ecom/auth/login', '{userEmail: "dimagadjilla@gmail.com", userPassword: "3036057Dr"}')
+// Cypress.Commands.add("LoginAPI_Custom", () => {
+//     cy.request("POST",
+//     "https://rahulshettyacademy.com/api/ecom/auth/login",
+//     {"userEmail": "dimagadjilla@gmail.com", "userPassword": "3036057Dr"})
+//     .then(function(response){
+//         expect(response.body).to.have.property('message', 'Login Successfully')
+//         expect(response.status).to.eq(200)
+//         Cypress.env('token', response.body.token);
+//     })
+// })
+
+Cypress.Commands.add("LoginAPI", () => {
+    cy.request({
+        method: 'POST',
+        url: 'https://rahulshettyacademy.com/api/ecom/auth/login',
+        body: {"userEmail": "dimagadjilla@gmail.com", "userPassword": "3036057Dr"},
+        failOnStatus: false
+})
     .then(function(response){
+        expect(response.body).to.have.property('message', 'Login Successfully')
         expect(response.status).to.eq(200)
         Cypress.env('token', response.body.token);
     })
