@@ -19,6 +19,11 @@
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
+
+// !TypeError
+// cy.{function_name} is not a function
+import './commands';
+
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
     // failing the test
