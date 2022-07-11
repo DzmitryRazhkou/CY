@@ -22,3 +22,20 @@ class HomePage
 }
 
 export default HomePage;
+
+
+// There are two way to create a POM:
+
+// static getFirstName(firstName){
+//     cy.get('#firstnamr').type(firstName, {delay: 30}).should('have.value', firstName)
+// }
+
+
+// Confirm pop up text after registration:
+
+// static submitForm(){
+//     cy.get("input[type='button']").click().wait(4000)
+//     cy.get('.nf-response-msg').invoke('text').then((text1) => {
+//         expect(text1).to.include('Thank You')
+//     })
+// }
